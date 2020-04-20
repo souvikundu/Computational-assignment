@@ -65,8 +65,10 @@ print("maximum of absolute error is ",absolute_error)
 with plt.style.context('dark_background'):
 
     plt.plot(T,Y,'c-o',label = "Adaptive Step Size")
-    plt.plot(T,Y_true,'r-o',label="Exact solution")
-
+    #plt.plot(T,Y_true,'r-o',label="Exact solution")
+    plt.xlabel("t")
+    plt.ylabel("y")
+    
     plt.legend()
     plt.grid()
     plt.show()

@@ -35,6 +35,13 @@ Y_1[0]=0
 sol_1=solve_bvp(f1,bc1,X_1,Y_1) #solution from solve_bvp
 y1=np.log(X_1) #solution from mathematica
 
+error1=np.zeros(N1)
+for j in range(N1):
+	error1[j]=abs(y1[j]-sol_1.sol(X_1)[0][j])
+
+print("Reason for arguing my numerical solution is correct is:")	
+print("Maximum absolute error for first one is", max(error1))
+
 fig1,ax1=plt.subplots()
 plt.plot(X_1,sol_1.sol(X_1)[0],'.',label="Using solve_bvp")
 plt.plot(X_1,y1,'black',label="Using Mathematica")
@@ -57,6 +64,11 @@ Y_2[0]=1
 
 sol_2 =solve_bvp(f2, bc2, X_2, Y_2) #solution from solve_bvp
 y2=np.exp(np.sin(X_2)) #solution from mathematica
+
+error2=np.zeros(N2)
+for j in range(N2):
+	error2[j]=abs(y2[j]-sol_2.sol(X_2)[0][j])
+print("Maximum absolute error for second one is", max(error2))
 
 fig2,ax2=plt.subplots()
 plt.plot(X_2,sol_2.sol(X_2)[0],'.',label="Using solve_bvp")
@@ -81,6 +93,11 @@ Y_3[0]=2**(-(1.0/4))
 sol_3=solve_bvp(f3,bc3,X_3,Y_3) #solution from solve_bvp
 y3=np.sqrt(np.sin(X_3)) #solution from mathematica
 
+error3=np.zeros(N3)
+for j in range(N3):
+	error3[j]=abs(y3[j]-sol_3.sol(X_3)[0][j])
+print("Maximum absolute error for third one is", max(error3))
+
 fig3,ax3=plt.subplots()
 plt.plot(X_3,sol_3.sol(X_3)[0],'.',label="Using solve_bvp")
 plt.plot(X_3,y3,'black',label="Using Mathematica")
@@ -103,6 +120,11 @@ Y_4[0]=2.0
 
 sol_4=solve_bvp(f4,bc4,X_4,Y_4) #solution from solve_bvp
 y4=np.sin(X_4)+2  #solution from mathematica
+
+error4=np.zeros(N4)
+for j in range(N4):
+	error4[j]=abs(y4[j]-sol_4.sol(X_4)[0][j])
+print("Maximum absolute error for fourth one is", max(error4))
 
 fig4,ax4=plt.subplots()
 plt.plot(X_4,sol_4.sol(X_4)[0],'.',label="Using solve_bvp")

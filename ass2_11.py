@@ -43,6 +43,8 @@ for i in range(N-1):
 plt.plot(T,U1,color='black',label="U1")
 plt.plot(T,U2,color='red',label="U2")
 plt.plot(T,U3,color='green',label="U3")
+plt.xlabel("t")
+plt.ylabel("u")
 
 plt.legend()
 plt.grid()

@@ -41,7 +41,9 @@ num_sol1=solve_ivp(f1,[a1, b1], [y1_0],t_eval=t)
 error1=np.zeros(11)
 for j in range(11):
 	error1[j]=abs(exact_sol1[j]-num_sol1.y[0][j])
-print("Maximum absolute error is", max(error1))
+
+print("Reason for arguing my numerical solution is correct is:")	
+print("Maximum absolute error for first one is", max(error1))
 
 fig1,ax1=plt.subplots()
 plt.plot(num_sol1.t,num_sol1.y[0],'r-o',label='Numerical solution(solve_ivp)')
@@ -70,7 +72,7 @@ num_sol2=solve_ivp(f2,[a2, b2], [y2_0],t_eval=t)
 error2=np.zeros(10) #here we omitted the last point as exact solution blows up at t=3
 for j in range(10):
 	error2[j]=abs(exact_sol2[j]-num_sol2.y[0][j])
-print("Maximum absolute error is", max(error2))
+print("Maximum absolute error for second one is", max(error2))
 
 fig2,ax2=plt.subplots()
 plt.plot(num_sol2.t,num_sol2.y[0],'r-o',label='Numerical solution(solve_ivp)')
@@ -98,7 +100,7 @@ num_sol3=solve_ivp(f3,[a3, b3], [y3_0],t_eval=t)
 error3=np.zeros(11)
 for j in range(11):
 	error3[j]=abs(exact_sol3[j]-num_sol3.y[0][j])
-print("Maximum absolute error is", max(error3))
+print("Maximum absolute error for third one is", max(error3))
 
 
 fig3,ax3=plt.subplots()
@@ -127,7 +129,7 @@ num_sol4=solve_ivp(f4,[a4, b4], [y4_0],t_eval=t)
 error4=np.zeros(11)
 for j in range(11):
 	error4[j]=abs(exact_sol4[j]-num_sol4.y[0][j])
-print("Maximum absolute error is", max(error4))
+print("Maximum absolute error for fourth one is", max(error4))
 
 
 fig4,ax4=plt.subplots()

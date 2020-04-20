@@ -20,6 +20,9 @@ for j in range(1,len(t)):
 	z[j]=t[j]/(1+np.log(t[j]))
 plt.plot(t,z, label="exact")
 
+plt.xlabel("t")
+plt.ylabel("y")
+
 #absolute and relative error
 abs_error=np.array([])
 rtv_error=np.array([])
@@ -27,8 +30,8 @@ for k in range(len(t)):
 	abs_error=np.append(abs_error,abs(z[k]-y[k]))
 	rtv_error=np.append(rtv_error,abs((z[k]-y[k])/z[k]))
 
-print(abs_error)
-print(rtv_error)
+print("absolute error at each evaluation point is ",abs_error)
+print("Relative error at each evaluation point is ",rtv_error)
 
 plt.legend()		
 plt.show()	

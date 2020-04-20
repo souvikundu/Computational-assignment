@@ -34,5 +34,8 @@ for i in range(len(x)-1):
 
 	
 plt.plot(x,y)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("RK4 method")
 plt.show()	
 
