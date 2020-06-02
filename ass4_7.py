@@ -16,7 +16,7 @@ def V(A):
 		N+=A[i]
 	v=0	
 	for j in range(11):
-		v+=(A[j]-N*probability_2dice(j))**2/(N*probability_2dice(j+2))
+		v+=(A[j]-N*probability_2dice(j+2))**2/(N*probability_2dice(j+2))
 
 	return v
 
@@ -38,14 +38,16 @@ def test_randomness(c):
 Obs_count1=np.array([4,10,10,13,20,18,18,11,13,14,13])
 Obs_count2=np.array([3,7,11,15,19,24,21,17,13,9,5])
 
-print(V(Obs_count2))
+print("V(Obs_count1):", V(Obs_count1))
+
+
+print("V(Obs_count1):", V(Obs_count2))
 
 c1 = 1.0-scipy.stats.chi2.cdf(V(Obs_count1), 10.0)
 c2 = 1.0-scipy.stats.chi2.cdf(V(Obs_count2), 10.0)
 
-print("The first set of observation is:"/n)
+print("The first set of observation is:")
 test_randomness(c1)
 
 print("The second set of observation is:"/n)
 test_randomness(c2)
-
