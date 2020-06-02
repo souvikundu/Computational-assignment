@@ -6,7 +6,7 @@
 int main()
 {
 	double x,y;
-	long int N=10;
+	long int N=10000;
 	FILE *data;
 	data=fopen("random.txt","w");
 
@@ -15,12 +15,12 @@ int main()
 
 	for(long int i=0; i<N; i++)
 	{
-		x=rand()/(double)RAND_MAX;
+		x=(double)rand()/(double)RAND_MAX;
 		y=-0.5*log(x);
 		fprintf(data,"%lf\n",y);
 	}
 	fclose(data);
-	//system("plot.py"); //to plot the histogram I've used python
+	system("python3 plot.py"); //to plot the histogram I've used python
 
 
 
